@@ -1,11 +1,17 @@
+:root {
+    --skyBlue: #00A2FF;
+}
+
 * {
     margin: 0;
     padding: 0;
     font-family: "Roboto", Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
 input {
     appearance: none;
+    outline: none;
 }
 
 .grid {
@@ -16,9 +22,13 @@ input {
 }
 
 .header-nav {
-    border: 2px solid red;
-
     grid-column: 2;
+
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.61);
+
+    padding-bottom: 4px;
 }
 
 .side-bar {
@@ -29,7 +39,7 @@ input {
     grid-template-rows: repeat(3, min-content);
     row-gap: 40px;
 
-    background-color: rgb(0, 162, 255);
+    background-color: var(--skyBlue);
 }
 
 .main-content {
@@ -39,6 +49,12 @@ input {
     grid-row: 2 / span 2;
 }
 
+ul, a {
+    list-style: none;
+    text-decoration: none;
+}
+
+/*side bar*/
 .side-bar img {
     width: 24px;
     height: auto;
@@ -79,4 +95,83 @@ li {
 .filter-white {
     filter: invert(100%) sepia(6%) saturate(0%) hue-rotate(325deg) brightness(105%) contrast(108%);
 }
+/*side bar*/
 
+
+/*header-nav*/
+.header-nav ul, .header-nav li {
+    color: rgb(0, 0, 0);
+}
+
+.header-nav img {
+    width: 24px;
+    height: auto;
+}
+
+.search-bar {
+    display: flex;
+    gap: 7px;
+}
+
+.search-links, .icon-msg-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: 30px;
+    padding-right: 50px;
+}
+
+.header-nav .links-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.links {
+    display: flex;
+
+    gap: 15px;
+}
+
+.icon-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.icon-message img {
+    width: 75px;
+    height: auto;
+}
+
+.links-buttons li + li > img {
+    width: 40px;
+    height: auto;
+}
+
+input[type="search"]{
+    border-radius: 15px;
+    width: 50vw;
+    line-height: 1.5rem;
+    border: none;
+    background-color: rgb(224, 237, 247);
+    font-size: 1.1rem;
+    padding: 0 10px;
+}
+
+input[type="search"]:focus {
+    border:1px solid rgb(0, 0, 0);
+}
+
+.header-nav a{
+    font-size: 1.05rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: var(--skyBlue);
+    width: 84px;
+    padding: 7px;
+    border-radius: 100px;
+}
+/*header-nav*/
