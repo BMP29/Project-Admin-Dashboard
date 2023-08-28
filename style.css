@@ -46,7 +46,7 @@ input {
 
     background-color: var(--skyBlue);
     z-index: 1;
-    padding: 0 80px 0 10px;
+    padding: 0 70px 0 10px;
 }
 
 .main-content {
@@ -72,12 +72,12 @@ ul, a {
 
 /*side bar*/
 .side-bar img {
-    width: 21.6px;
+    width: 27px;
     height: auto;
 }
 
 .side-bar h1 > img {
-    width: 30px;
+    width: 40px;
     height: auto;
 }
 
@@ -236,8 +236,6 @@ p {
     font-size: 0.85rem;
     color: var(--grayPara);
 }
-
-
 
 .announcements, .trending {
     width: 243px;
