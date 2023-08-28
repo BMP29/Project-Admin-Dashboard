@@ -2,6 +2,7 @@
     --skyBlue: #00A2FF;
     --orangeShock: #FF5D00;
     --backgroundBlue: #e0edf7;
+    --grayPara: #757575f8;
 }
 
 * {
@@ -19,16 +20,20 @@ input {
 .grid {
     display: grid;
 
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 4fr;
+    grid-template-columns: min-content 4fr;
+    grid-template-rows: min-content 4fr;
+    height: 100vh;
 }
 
 .header-nav {
-    grid-column: 2;
 
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
     padding-bottom: 4px;
+    z-index: 1;
+
+    background-color: white;
+    box-shadow: #00000015 0 0 20px 2px;
+
+    padding: 15px;
 }
 
 .side-bar {
@@ -40,6 +45,8 @@ input {
     row-gap: 40px;
 
     background-color: var(--skyBlue);
+    z-index: 1;
+    padding: 0 40px 0 10px;
 }
 
 .main-content {
@@ -50,8 +57,11 @@ input {
 
     display: grid;
 
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 3fr min-content; 
+    grid-template-rows: min-content;
+    grid-auto-rows: min-content;
+
+    overflow: auto;
 }
 
 ul, a {
@@ -61,17 +71,17 @@ ul, a {
 
 /*side bar*/
 .side-bar img {
-    width: 24px;
+    width: 21.6px;
     height: auto;
 }
 
 .side-bar h1 > img {
-    width: 40px;
+    width: 30px;
     height: auto;
 }
 
 li {
-    font-size: 1.3rem;
+    font-size: 1.16rem;
 }
 
 .side-bar ul, li, h1 {
@@ -94,7 +104,7 @@ li {
 
 .side-bar h1 {
     margin-top: 15px;
-    font-size: 1.6rem;
+    font-size: 1.44rem;
 }
 
 .filter-white {
@@ -109,7 +119,7 @@ li {
 }
 
 .header-nav img {
-    width: 24px;
+    width: 21.6px;
     height: auto;
 }
 
@@ -146,22 +156,22 @@ li {
 }
 
 .icon-message img {
-    width: 75px;
+    width: 67.5px;
     height: auto;
 }
 
 .links-buttons li + li > img {
-    width: 40px;
+    width: 36px;
     height: auto;
 }
 
 input[type="search"]{
     border-radius: 15px;
     width: min(50vw, 700px);
-    line-height: 1.5rem;
+    line-height: 1.35rem;
     border: none;
     background-color: var(--backgroundBlue);
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 0 10px;
 }
 
@@ -170,12 +180,12 @@ input[type="search"]:focus {
 }
 
 .header-nav a{
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     font-weight: bold;
     text-align: center;
     color: white;
     background-color: var(--skyBlue);
-    width: 84px;
+    width: 75.6px;
     padding: 7px;
     border-radius: 100px;
 }
@@ -184,35 +194,94 @@ input[type="search"]:focus {
 /*main-content*/
 .cards-projects{
     grid-row: span 2;
+    padding: 18px;
+}
+
+.title {
+    margin-left: 10px;
+    margin-bottom: 5px;
 }
 
 .cards-projects > h3 {
-    margin: 15px 0 15px 30px;
-    font-size: 1.5rem;
-    font-weight: 400;
+    margin: 15px 0 15px 40px;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     row-gap: 20px;
 }
 
 .card {
-    width: 90%;
-    height: 165px;
+    width: 95%;
+    height: 170px;
 
     place-self: center;
 
     border-left: 8px solid var(--orangeShock);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.144);
     border-radius: 10px;
-    padding: 10px;
+    padding: 9px;
 
     background-color: white;
-}   
+}
+
+.card h3 {
+    font-size: 0.9rem;
+}
+
+p {
+    font-size: 0.85rem;
+    color: var(--grayPara);
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
 
 .announcements, .trending {
+    margin-right: 20px;
+    margin-bottom: 15px;
+
+    width: 243px;
+    justify-self: center;
     align-self: center;
+}
+
+.announcements {
+    margin-top: 35px;
+}
+
+.announc-blocks, .profiles {
+    background-color: white;
+    padding: 13.5px;
+    border-radius: 15px;
+}
+
+.profiles {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profiles img {
+    height: 45px;
+    margin-right: 10px;
+}
+
+.announc {
+    padding: 5px;
+}
+
+.announc:nth-child(2) {
+    border-top: 1px solid var(--grayPara);
+    border-bottom: 1px solid var(--grayPara);
+    margin: 10px 0 10px 0;
 }
 /*main-content*/
